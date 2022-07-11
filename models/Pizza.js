@@ -4,12 +4,12 @@ const { Schema, model } = require('mongoose')
 
 const PizzaSchema = new Schema({
 
-    pizzaNAme: {
-        type: string
+    pizzaName: {
+        type: String
     }, 
 
     createdby: {
-        type: string
+        type: String
     },
 
     createdAt: {
@@ -18,7 +18,7 @@ const PizzaSchema = new Schema({
     },
 
     size: {
-        type: string,
+        type: String,
 
         default: 'Large'
     },

@@ -7,7 +7,7 @@ const pizzaController = {
 // **** Pizza Methods ****
     // get all pizzas
 
-    getAllPizzas(req, res) {
+    getAllPizza(req, res) {
         Pizza.find({})
             .then(dbPizzaData => res.json(dbPizzaData))
             .catch(err => {
@@ -43,8 +43,8 @@ const pizzaController = {
     },
 
     // updating a pizza by id 
-    updatePizzaById({ params , body}, res) {
-        Pizza.findOneAndUpdate({_id: params.id})
+    updatePizza({ params , body}, res) {
+        Pizza.findOneAndUpdate({_id: params.id}, body, {new: true})
             .then(dbPizzaData => {
                 // If no pizza is found , send a 404
                 if(!dbPizzaData) {
@@ -58,7 +58,7 @@ const pizzaController = {
     },
 
     // delete a pizza by id 
-    deletePizzaById({ params , body}, res) {
+    deletePizza({ params , body}, res) {
         Pizza.findOneAndDelete({_id: params.id})
             .then(dbPizzaData => {
                 // If no pizza is found , send a 404
