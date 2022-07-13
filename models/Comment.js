@@ -12,7 +12,7 @@ const ReplySchema = new Schema(
   replyBody: {
     type: String
   },
-  writtienBy: {
+  writtenBy: {
     type: String
   },
   createdAt: {
@@ -48,7 +48,8 @@ const CommentSchema = new Schema({
     virtuals: true,
     getters: true
 
-  }
+  },
+  id: false
 }
 );
 
